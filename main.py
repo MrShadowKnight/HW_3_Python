@@ -108,22 +108,38 @@ products = {
     'ківі': 20
 }
 
-print("Яблука ", products["яблука"], "грн, -- 1")
-print("Банани", products["банани"], "грн, -- 2")
-print("Апельсини ", products["апельсини"], "грн, -- 3")
-print("Груші ", products["груші"], "грн, -- 4")
-print("Ківі ", products["ківі"], "грн, -- 5\n")
-
 balance = 100
-
 shopping_cart = []
 while balance >0:
+    print("Яблука ", products["яблука"], "грн, -- 1")
+    print("Банани", products["банани"], "грн, -- 2")
+    print("Апельсини ", products["апельсини"], "грн, -- 3")
+    print("Груші ", products["груші"], "грн, -- 4")
+    print("Ківі ", products["ківі"], "грн, -- 5\n")
+
     choice_products = int(input("Введіть номер продукту: "))
     if choice_products == 1:
-        element = products["яблука"]
+        element = "яблука"
         shopping_cart.append(element)
         balance = balance - products["яблука"]
+    elif choice_products == 2:
+        element = "банани"
+        shopping_cart.append(element)
+        balance = balance - products["банани"]
+    elif choice_products == 3:
+        element = "апельсини"
+        shopping_cart.append(element)
+        balance = balance - products["апельсини"]
+    elif choice_products == 4:
+        element = "груші"
+        shopping_cart.append(element)
+        balance = balance - products["груші"]
+    elif choice_products == 5:
+        element = "ківі"
+        shopping_cart.append(element)
+        balance = balance - products["ківі"]
+    else:
+        print("Такого продукту немає в списку!")
 
 print(shopping_cart)
-# for item in products:
-#     print(products[item])
+print(balance)
