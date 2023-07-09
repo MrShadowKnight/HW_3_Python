@@ -165,6 +165,6 @@ while balance > 0:
         print("Товар не знайдено!\n")
     print("Ваш баланс: ", balance, "грн.\n")
 
-print("Ваші продукти: ", shopping_cart)
+print("Загальна вартість покупок: ", shopping_cart)
 print("загальна сума покупок:", purchase_amount, "грн.")
 print("Ваш баланс:", balance, "грн.\n")
