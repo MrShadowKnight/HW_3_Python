@@ -110,36 +110,48 @@ products = {
 
 balance = 100
 shopping_cart = []
-while balance >0:
-    print("Яблука ", products["яблука"], "грн, -- 1")
-    print("Банани", products["банани"], "грн, -- 2")
-    print("Апельсини ", products["апельсини"], "грн, -- 3")
-    print("Груші ", products["груші"], "грн, -- 4")
-    print("Ківі ", products["ківі"], "грн, -- 5\n")
+while balance > 0:
+    print("Яблука ", products["яблука"], "грн., -- 1")
+    print("Банани", products["банани"], "грн., -- 2")
+    print("Апельсини ", products["апельсини"], "грн., -- 3")
+    print("Груші ", products["груші"], "грн., -- 4")
+    print("Ківі ", products["ківі"], "грн., -- 5")
+    
+    print("Для виходу натисніть: Q\n")
 
-    choice_products = int(input("Введіть номер продукту: "))
-    if choice_products == 1:
+    choice_products = input("Введіть номер продукту: ")
+    if choice_products == "1" and balance >= products["яблука"]:
         element = "яблука"
         shopping_cart.append(element)
         balance = balance - products["яблука"]
-    elif choice_products == 2:
+        print("Товар додано до кошику!\n")
+    elif choice_products == "2" and balance >= products["банани"]:
         element = "банани"
         shopping_cart.append(element)
         balance = balance - products["банани"]
-    elif choice_products == 3:
+        print("Товар додано до кошику!\n")
+    elif choice_products == "3" and balance >= products["апельсини"]:
         element = "апельсини"
         shopping_cart.append(element)
         balance = balance - products["апельсини"]
-    elif choice_products == 4:
+        print("Товар додано до кошику!\n")
+    elif choice_products == "4" and balance >= products["груші"]:
         element = "груші"
         shopping_cart.append(element)
         balance = balance - products["груші"]
-    elif choice_products == 5:
+        print("Товар додано до кошику!\n")
+    elif choice_products == "5" and balance >= products["ківі"]:
         element = "ківі"
         shopping_cart.append(element)
         balance = balance - products["ківі"]
+        print("Товар додано до кошику!\n")
+    elif choice_products == "1" or choice_products == "2" or choice_products == "3" or choice_products == "4" or choice_products == "5":
+        print("На вашому балансі недостатньо коштів!\n")
+    elif choice_products == "q":
+        break
     else:
-        print("Такого продукту немає в списку!")
+        print("Товар не знайдено!\n")
+    print("Ваш баланс: ", balance, "грн.\n")
 
-print(shopping_cart)
-print(balance)
+print("Ваші продукти: ", shopping_cart)
+print("Ваш баланс: ", balance, "грн.\n")
